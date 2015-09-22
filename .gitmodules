@@ -1,0 +1,3 @@
+[submodule "html/tradingview"]
+	path = html/tradingview
+	url = git@github.com:skela/charting_library.git
