@@ -7,6 +7,7 @@ import android.util.Log;
 import android.view.ViewGroup;
 import android.webkit.ConsoleMessage;
 import android.webkit.WebChromeClient;
+import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.LinearLayout;
@@ -49,7 +50,9 @@ public class ChartView extends LinearLayout
         web = new WebView(context);
         web.setLayoutParams(new ViewGroup.LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT));
         web.setBackgroundColor(Color.TRANSPARENT);
-        web.getSettings().setJavaScriptEnabled(true);
+        WebSettings settings = web.getSettings();
+        settings.setJavaScriptEnabled(true);
+        settings.setDomStorageEnabled(true);
         web.setClickable(false);
         web.setFocusable(false);
         web.setFocusableInTouchMode(false);
@@ -70,9 +73,9 @@ public class ChartView extends LinearLayout
         web.loadUrl("http://demo_chart.tradingview.com");
 
         // Local Implementation (This approach works perfectly on iOS, but not on Android)
-//        String baseUrl = getBaseUrl();
-//        String html = createHtml();
-//        web.loadDataWithBaseURL(baseUrl, html, "text/html", "utf-8", null);
+        //String baseUrl = getBaseUrl();
+        //String html = createHtml();
+        //web.loadDataWithBaseURL(baseUrl, html, "text/html", "utf-8", null);
     }
 
     public void stop()
