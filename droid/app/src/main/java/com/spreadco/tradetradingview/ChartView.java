@@ -70,7 +70,7 @@ public class ChartView extends LinearLayout
 
         loading = true;
 
-        web.loadUrl("http://demo_chart.tradingview.com");
+        web.loadUrl("http://demo_chart.tradingview.com/mobile_white.html");
 
         // Local Implementation (This approach works perfectly on iOS, but not on Android)
         //String baseUrl = getBaseUrl();
